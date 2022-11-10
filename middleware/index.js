@@ -7,6 +7,7 @@ const APP_SECRET = process.env.APP_SECRET
 
 const hashPassword = async (password) => {
   let hashedPassword = await bcrypt.hash(password, SALT_ROUNDS)
+  console.log(hashedPassword)
   return hashedPassword
 }
 
@@ -52,8 +53,9 @@ const stripToken = (req, res, next) => {
   }
 }
 
-let password = 'password123'
-console.log(hashPassword(password))
+let chris = 'fhdircngig'
+
+hashPassword(chris)
 
 module.exports = {
   stripToken,
