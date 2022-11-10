@@ -13,8 +13,22 @@ module.exports = (sequelize, DataTypes) => {
   }
   UserProducts.init(
     {
-      productId: DataTypes.INTEGER,
-      userId: DataTypes.INTEGER,
+      productId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'products',
+          key: 'id'
+        }
+      },
       wishlist: DataTypes.BOOLEAN
     },
     {
