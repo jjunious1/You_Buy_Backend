@@ -18,7 +18,7 @@ module.exports = {
         name: 'Headphones',
         description: 'New headphones, still in box',
         image:
-          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.hocoaccessories.com%2Fwp-content%2Fuploads%2F2020%2F12%2Fhoco-w29-outstanding-wireless-headphones-buttons.jpg&f=1&nofb=1&ipt=888c1bd3619b0099cab4d26bcfbe878155bcf5061af2842638de094685d570fc&ipo=images',
+          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.JjShDuNbhhAXoOkplyoEVAHaJ0%26pid%3DApi&f=1&ipt=8a7bc3ebf8ab02f3ee1fb2e2ad269c98e0e93a85042b4780da589eef4aa53599&ipo=images',
         price: '55.00',
         ownerId: 2,
         createdAt: new Date(),
