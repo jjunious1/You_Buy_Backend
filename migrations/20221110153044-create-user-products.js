@@ -16,7 +16,9 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       wishlist: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: 0
       },
       createdAt: {
         allowNull: false,
