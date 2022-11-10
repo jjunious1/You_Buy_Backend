@@ -8,19 +8,25 @@ module.exports = {
         name: 'Bob Smith',
         email: 'bobsmith1@yahoo.com',
         passwordDigest:
-          '$2b$10$JGTZsvsQsRdTGiCW4Bkbi.ws03g78R6IRsm5Esf8R6xtrcBLcqjIO'
+          '$2b$10$JGTZsvsQsRdTGiCW4Bkbi.ws03g78R6IRsm5Esf8R6xtrcBLcqjIO',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Steven Jackson',
         email: 'stevenj97@yahoo.com',
         passwordDigest:
-          '$2b$10$EWIPlrqAFZNVkXEl/tlkT.5ATuRiI6VmSrzjOurEKix.XCRw1WXde'
+          '$2b$10$EWIPlrqAFZNVkXEl/tlkT.5ATuRiI6VmSrzjOurEKix.XCRw1WXde',
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Daniel Jones',
         email: 'djonesman@yahoo.com',
         passwordDigest:
-          '$2b$10$upNdxV6umIjWLCWpQNafhe4VVaLILepqsGxDEOcOizQottIzGTFDe'
+          '$2b$10$upNdxV6umIjWLCWpQNafhe4VVaLILepqsGxDEOcOizQottIzGTFDe',
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ])
   },
