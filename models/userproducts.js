@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
           key: 'id'
         }
       },
-      wishlist: DataTypes.BOOLEAN
+      wishList: DataTypes.BOOLEAN
     },
     {
       sequelize,
