@@ -4,6 +4,7 @@ const logger = require('morgan')
 const AuthRouter = require('./routes/AuthRouter')
 const ProductsRouter = require('./routes/ProductsRouter')
 const UserProductsRouter = require('./routes/UserProductsRouter')
+const CommentsRouter = require('./routes/CommentsRouter')
 
 const app = express()
 
@@ -18,5 +19,6 @@ app.use(express.json())
 app.use('/auth', AuthRouter)
 app.use('/products', ProductsRouter)
 app.use('/profile', UserProductsRouter)
+app.use('/comments', CommentsRouter)
 
 app.listen(PORT, () => console.log(`Server Running On Port: ${PORT}`))
