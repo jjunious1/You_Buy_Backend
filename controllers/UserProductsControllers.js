@@ -1,25 +1,34 @@
-const { UserProducts } = require('../models')
+const { UserProducts, Products, User } = require('../models')
 
 const GetSales = async (req, res) => {
   try {
-    const products = await UserProducts.findAll({})
+    const products = await Products.findAll({
+      where: { ownerId: req.params.id },
+      include: [
+        {
+          model: User,
+          as: 'owner',
+          attributes: ['name', 'email']
+        }
+      ]
+    })
     res.send(products)
   } catch (error) {
     throw error
   }
 }
 
-// const GetWishList = async (req, res) => {
-//   try {
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
 const Sell = async (req, res) => {
   try {
-    const sellItem = await UserProducts.create({})
-    res.send(sellItem)
+    const { name, description, image, price } = req.body
+    const products = await Products.create({
+      name,
+      description,
+      image,
+      price,
+      ownerId: req.params.id
+    })
+    res.send(products)
   } catch (error) {
     throw error
   }
