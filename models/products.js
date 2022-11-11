@@ -13,11 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'owner',
         foreignKey: 'ownerId'
       })
-      Products.belongsToMany(models.User, {
-        as: 'products',
-        through: models.UserProducts,
-        foreignKey: 'productId'
-      })
+      Products.hasMany(models.Comment, { foreignKey: 'productId' })
     }
   }
   Products.init(
