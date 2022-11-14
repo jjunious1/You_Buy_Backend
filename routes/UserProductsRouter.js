@@ -7,7 +7,19 @@ router.post(
   '/:id',
   middleware.stripToken,
   middleware.verifyToken,
-  controller.Sell
+  controller.NewSell
+)
+router.put(
+  '/:id/:sale_id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.UpdateSale
+)
+router.delete(
+  '/:id/:sale_id',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.DeleteSale
 )
 
 module.exports = router
