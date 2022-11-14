@@ -22,15 +22,7 @@ const GetSales = async (req, res) => {
 //allows you to see only your products for sell
 const NewSell = async (req, res) => {
   try {
-    let ownerId = parseInt(req.params.id)
-    const { name, description, image, price } = req.body
-    const products = await Products.create({
-      name,
-      description,
-      image,
-      price,
-      ownerId
-    })
+    const products = await Products.create(req.body)
     res.send(products)
   } catch (error) {
     throw error
