@@ -14,15 +14,7 @@ const GetProducts = async (req, res) => {
 const GetCommentsInProduct = async (req, res) => {
   try {
     let productId = parseInt(req.params.id)
-    const comment = await Products.findByPk(productId, {
-      include: [
-        {
-          model: Comment,
-          attributes: ['name', 'description'],
-          where: { id: productId }
-        }
-      ]
-    })
+    const comment = await Products.findByPk(productId)
     res.send(comment)
   } catch (error) {
     throw error
