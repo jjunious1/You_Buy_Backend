@@ -1,4 +1,4 @@
-const { Products, User } = require('../models')
+const { Products, Comment } = require('../models')
 
 //returns all sale products on home page
 const GetSales = async (req, res) => {
@@ -7,9 +7,8 @@ const GetSales = async (req, res) => {
       where: { ownerId: req.params.id },
       include: [
         {
-          model: User,
-          as: 'owner',
-          attributes: ['name', 'email']
+          model: Comment,
+          attributes: ['name', 'description']
         }
       ]
     })

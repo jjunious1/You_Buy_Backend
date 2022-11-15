@@ -1,4 +1,4 @@
-const { Products, User, Comment } = require('../models')
+const { Products, User } = require('../models')
 
 const GetProducts = async (req, res) => {
   try {
@@ -14,7 +14,7 @@ const GetProducts = async (req, res) => {
 const GetCommentsInProduct = async (req, res) => {
   try {
     let productId = parseInt(req.params.id)
-    const comment = await Products.findByPk(productId)
+    const comment = await Products.findOne({ where: { ownerId: productId } })
     res.send(comment)
   } catch (error) {
     throw error
