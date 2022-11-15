@@ -31,7 +31,7 @@ const NewSell = async (req, res) => {
 // allows you to update sale. Must pass entire information on front-end
 const UpdateSale = async (req, res) => {
   try {
-    let saleId = parseInt(req.params.sale_id)
+    const { saleId } = req.body
     const update = await Products.update(req.body, {
       where: { id: saleId },
       returning: true
@@ -41,7 +41,7 @@ const UpdateSale = async (req, res) => {
 }
 const DeleteSale = async (req, res) => {
   try {
-    let saleId = parseInt(req.params.sale_id)
+    const { saleId } = req.body
     let item = await Products.findByPk(saleId)
     await Products.destroy({ where: { id: saleId } })
     res.send({
