@@ -11,10 +11,10 @@ const GetProducts = async (req, res) => {
   }
 }
 
-const GetCommentsInProduct = async (req, res) => {
+const GetOneInProduct = async (req, res) => {
   try {
     let productId = parseInt(req.params.id)
-    const comment = await Products.findOne({ where: { ownerId: productId } })
+    const comment = await Products.findOne({ where: { id: productId } })
     res.send(comment)
   } catch (error) {
     throw error
@@ -23,5 +23,5 @@ const GetCommentsInProduct = async (req, res) => {
 
 module.exports = {
   GetProducts,
-  GetCommentsInProduct
+  GetOneInProduct
 }
