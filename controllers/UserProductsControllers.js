@@ -37,17 +37,19 @@ const UpdateSale = async (req, res) => {
       returning: true
     })
     res.send(update)
-  } catch (error) {}
+  } catch (error) {
+    throw error
+  }
 }
 const DeleteSale = async (req, res) => {
   try {
-    const { saleId } = req.body
-    let item = await Products.findByPk(saleId)
-    await Products.destroy({ where: { id: saleId } })
+    await Products.destroy({ where: { name: req.body } })
     res.send({
-      message: `Your item for sale ${item.name} has successfully been deleted`
+      message: `Your item for sale ${Products.name} has successfully been deleted`
     })
-  } catch (error) {}
+  } catch (error) {
+    throw error
+  }
 }
 
 module.exports = {
