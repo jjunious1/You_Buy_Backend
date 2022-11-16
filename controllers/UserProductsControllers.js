@@ -3,7 +3,6 @@ const { Products, Comment } = require('../models')
 //returns all sale products on home page
 const GetSales = async (req, res) => {
   try {
-    let arr = []
     const products = await Products.findAll({
       where: { ownerId: req.params.id },
       include: [
@@ -13,20 +12,7 @@ const GetSales = async (req, res) => {
         }
       ]
     })
-
-    const comments = await Comment.findAll({
-      where: { productId: req.params.id },
-      include: [
-        {
-          model: Products,
-          as: 'review',
-          attributes: ['name', 'price']
-        }
-      ]
-    })
-    arr.push(products)
-    arr.push(...arr, comments)
-    res.send(arr)
+    res.send(products)
   } catch (error) {
     throw error
   }
