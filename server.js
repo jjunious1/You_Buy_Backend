@@ -19,6 +19,6 @@ app.use(express.json())
 app.use('/auth', AuthRouter)
 app.use('/products', ProductsRouter)
 app.use('/profile', UserProductsRouter)
-app.use('/comments', CommentsRouter)
+app.use('/products', CommentsRouter)
 
 app.listen(PORT, () => console.log(`Server Running On Port: ${PORT}`))
