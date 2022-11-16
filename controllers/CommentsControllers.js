@@ -3,7 +3,7 @@ const { Comment, Products } = require('../models')
 const GetComments = async (req, res) => {
   try {
     const comments = await Comment.findAll({
-      include: [{ model: Products, as: 'review', attributes: ['name'] }]
+      include: [{ model: Products, as: 'review', attributes: ['ownerId'] }]
     })
     res.send(comments)
   } catch (error) {
