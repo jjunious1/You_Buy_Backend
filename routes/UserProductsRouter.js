@@ -16,7 +16,7 @@ router.put(
   controller.UpdateSale
 )
 router.delete(
-  '/:id',
+  '/',
   middleware.stripToken,
   middleware.verifyToken,
   controller.DeleteSale
