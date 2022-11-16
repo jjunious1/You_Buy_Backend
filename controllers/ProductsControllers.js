@@ -20,8 +20,32 @@ const GetOneInProduct = async (req, res) => {
     throw error
   }
 }
+// for building database
+const createProduct = async (req, res) => {
+  try {
+    const newProducts = await Products.bulkCreate(req.body)
+    res.send(newProducts)
+  } catch (error) {
+    throw error
+  }
+}
+
+const updateProduct = async (req, res) => {
+  try {
+    const { id } = req.body
+    const product = await Products.update(req.body, {
+      where: { id: id },
+      returning: true
+    })
+    res.send(product)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
   GetProducts,
-  GetOneInProduct
+  GetOneInProduct,
+  createProduct,
+  updateProduct
 }
