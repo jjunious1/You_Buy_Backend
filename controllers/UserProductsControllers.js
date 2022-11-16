@@ -43,7 +43,8 @@ const UpdateSale = async (req, res) => {
 }
 const DeleteSale = async (req, res) => {
   try {
-    await Products.destroy({ where: { name: req.body } })
+    const { saleId } = req.body
+    await Products.destroy({ where: { id: saleId } })
     res.send({
       message: `Your item for sale ${Products.name} has successfully been deleted`
     })
