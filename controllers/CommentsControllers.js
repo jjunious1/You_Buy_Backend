@@ -1,5 +1,7 @@
 const { Comment, Products } = require('../models')
 
+//Used to get all comments and be displayed in profile
+
 const GetComments = async (req, res) => {
   try {
     const comments = await Comment.findAll({
@@ -13,27 +15,7 @@ const GetComments = async (req, res) => {
   }
 }
 
-// const GetCommentsById = async (req, res) => {
-//   try {
-//     const comment = await Comment.findByPk(req.params.id)
-//     res.send(comment)
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
-// const UpdateComment = async (req, res) => {
-//   try {
-//     let commentId = parseInt(req.params.id)
-//     let updatedComment = await Comment.update(req.body, {
-//       where: { id: commentId }
-//     })
-//     res.send(updatedComment)
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
+//Used to create comments('message') on specific product page and send to seller
 const CreateComments = async (req, res) => {
   try {
     let commentBody = {
@@ -46,20 +28,7 @@ const CreateComments = async (req, res) => {
   }
 }
 
-// const DeleteComment = async (req, res) => {
-//   try {
-//     let commentId = parseInt(req.params.id)
-//     await Comment.destroy({ where: { id: commentId } })
-//     res.send({ message: `Deleted comment with an id of ${commentId}` })
-//   } catch (error) {
-//     throw error
-//   }
-// }
-
 module.exports = {
   GetComments,
-  // GetCommentsById,
-  // UpdateComment,
   CreateComments
-  // DeleteComment
 }
